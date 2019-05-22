@@ -20,11 +20,12 @@
         public int timeLimit = 15;
         private float timer = 0.0f;
         private int timeInSecs = 0;
+        private bool timerActive = false;
 
         public int touchToUnlock = 20;
         private int touchCount = 0;
         public Slider touchSlider;
-
+        private bool touchActive;
 
         // Start is called before the first frame update
         void Start()
@@ -36,32 +37,47 @@
         // Update is called once per frame
         void Update()
         {
-            updateTimer();
+            bool buttonPressed = true;
+            if (buttonPressed)
+            {
+                touchCount = 0;
+                touchActive = true;
+                //also make slider visible
+            }
+
+            if (timerActive)
+            { //timeractive becomes true when button is pressed
+                updateTimer();
+                if (touchCount == touchToUnlock)
+                {
+                    // make slider invisible
+                    // state moves to TAKE_HOME
+                }
+            }
 
             Touch touch = Input.GetTouch(0);
-            if (Input.touchCount > 0 && touch.phase == TouchPhase.Began)
+            if (touchActive)
             {
-                // TrackableHit hit;
-                // TrackableHitFlags flags = TrackableHitFlags.PlaneWithinPolygon | TrackableHitFlags.FeaturePointWithSurfaceNormal;
-
-                // //ARCore Raycast
-                // if (Frame.Raycast(touch.position.x, touch.position.y, flags, out hit))
-                // {
-                //     var anchor = hit.Trackable.CreateAnchor(hit.Pose);
-                //     Instantiate(loaded, hit.Pose.position, hit.Pose.rotation, anchor.transform);
-                // }
-
-                touchCount++;
-                touchSlider.value = touchCount;
+                if (Input.touchCount > 0 && touch.phase == TouchPhase.Began)
+                {
+                    touchCount++;
+                    touchSlider.value = touchCount;
+                }
             }
         }
 
-        void updateTimer(){
+        void updateTimer()
+        {
             timer += Time.deltaTime;
-         // turn seconds in float to int
+            // turn seconds in float to int
             timeInSecs = (int)(timer % 60);
-            if (timeInSecs<15){
+            if (timeInSecs <= timeLimit)
+            {
                 timeText.text = "" + (timeLimit - timeInSecs);
+            }
+            else
+            {
+                timerActive = false;
             }
         }
     }

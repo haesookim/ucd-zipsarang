@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -354,6 +354,7 @@ GameObject:
   - component: {fileID: 1331148399}
   - component: {fileID: 1331148398}
   - component: {fileID: 1331148401}
+  - component: {fileID: 1331148402}
   m_Layer: 0
   m_Name: Eong
   m_TagString: Untagged
@@ -436,7 +437,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331148397}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24, y: -138, z: 940}
+  m_LocalPosition: {x: -19, y: -181, z: 940}
   m_LocalScale: {x: 30, y: 30, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -455,10 +456,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 100, y: 0, z: 0}
+  nuggimpyo: 0
   affection: 0
   interval: 5
   sitting: {fileID: 21300000, guid: dfc6900720f1a4daca8dfdbee6cd79a8, type: 3}
   stretching: {fileID: 21300000, guid: 326f0a6eaf7eb4e9195c36fb16c36bcf, type: 3}
+--- !u!61 &1331148402
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331148397}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.22, y: 9.84}
+    newSize: {x: 10.22, y: 9.84}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 5.5}
+  m_EdgeRadius: 0
 --- !u!1 &1930340514
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,7 +560,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930340514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: -53, z: 950}
+  m_LocalPosition: {x: 3.7, y: -100.1, z: 950}
   m_LocalScale: {x: 180, y: 180, z: 1.8000001}
   m_Children: []
   m_Father: {fileID: 0}

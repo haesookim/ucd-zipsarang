@@ -21,7 +21,7 @@ public class animalController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        BoxCollider2D col = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -51,15 +51,27 @@ public class animalController : MonoBehaviour
             nuggimpyo = true;
         }
 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended) {
+        /*if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended) {
             Vector3 touchPos = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
             Vector2 touchPos2D = new Vector2(touchPos.x , touchPos.y);
             RaycastHit2D hitInfo = Physics2D.Raycast(touchPos2D, Camera.main.transform.forward);
             if (hitInfo.collider != null) {
                 GameObject touchedObj = hitInfo.transform.gameObject;
-                Debug.Log(touchedObj.transform.name);
+                
             }
+        }*/
+        
+    }
+
+    void OnMouseDown() {
+        Debug.Log("Meow");
+        if (nuggimpyo == true) {
+            raiseAffect();
         }
+        else {
+            Debug.Log("Detail info");
+        }
+        Debug.Log(affection);
     }
 
     void randomMovement(int rand){

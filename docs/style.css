@@ -5,6 +5,13 @@ html, body{
     font-family: sans-serif;
 }
 
+#logo{
+    width: 5%;
+    height: 5%;
+    margin: 7px;
+    margin-left: 15px;
+}
+
 nav{
     display: flex;
     justify-content: space-between;

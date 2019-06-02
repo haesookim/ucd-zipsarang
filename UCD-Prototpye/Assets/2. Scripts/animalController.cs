@@ -9,7 +9,7 @@ public class animalController : MonoBehaviour
     public bool nuggimpyo = false;
     public int affection = 0;
 
-    public int interval = 3;
+    public int interval = 5;
     private int currTime = 0;
     private float timer;
     private int timeInSecs;
@@ -78,27 +78,30 @@ public class animalController : MonoBehaviour
         switch (rand){
             case 0 : 
                 move(0);
-                gameObject.GetComponent<Animator>().enabled = true;
+                gameObject.GetComponent<Animator>().SetBool("stretching", false);
+                gameObject.GetComponent<Animator>().SetBool("sitting", false);
                 gameObject.GetComponent<Animator>().SetBool("moving", true);
                 break;
 
             case 1:
-                move(1); 
-                gameObject.GetComponent<Animator>().enabled = true;
+                move(1);
+                gameObject.GetComponent<Animator>().SetBool("stretching", false);
+                gameObject.GetComponent<Animator>().SetBool("sitting", false);
                 gameObject.GetComponent<Animator>().SetBool("moving", true);
                 break;
 
             case 2:
                 //앉아있기
-                gameObject.GetComponent<SpriteRenderer>().sprite = sitting;
                 gameObject.GetComponent<Animator>().SetBool("moving", false);
+                gameObject.GetComponent<Animator>().SetBool("stretching", false);
+                gameObject.GetComponent<Animator>().SetBool("sitting", true);
                 break;
             
             case 3:
                 //기지개
-                gameObject.GetComponent<Animator>().enabled = false;
-                gameObject.GetComponent<SpriteRenderer>().sprite = stretching;
                 gameObject.GetComponent<Animator>().SetBool("moving", false);
+                gameObject.GetComponent<Animator>().SetBool("sitting", false);
+                gameObject.GetComponent<Animator>().SetBool("stretching", true);
                 break;
         }
     }

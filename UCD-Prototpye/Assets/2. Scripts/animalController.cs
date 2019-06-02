@@ -15,6 +15,11 @@ public class animalController : MonoBehaviour
     private int timeInSecs;
     private int rand = 2;
 
+    public Camera Main;
+    public Camera Focus;
+    public Canvas MainUI;
+    public Canvas FocusUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +74,12 @@ public class animalController : MonoBehaviour
             Debug.Log("Detail info");
         }
         Debug.Log(affection);
+
+        //camera switching script
+        Main.enabled = false;
+        Focus.enabled = true;
+        MainUI.enabled = false;
+        FocusUI.enabled = true;
     }
 
     void randomMovement(int rand){
@@ -106,13 +117,13 @@ public class animalController : MonoBehaviour
     void move(int dir){
         if (dir == 0){ // move left
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
-            if (gameObject.transform.position.x < -1000 ) {
+            if (gameObject.transform.position.x < -7.5 ) {
                 rand = 1;
             }
             transform.Translate(-speed * Time.deltaTime);
         } else if (dir ==1){ // move right
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
-            if (gameObject.transform.position.x > 1000) {
+            if (gameObject.transform.position.x > 7.5) {
                 rand = 0;
             }
             transform.Translate(speed * Time.deltaTime);    

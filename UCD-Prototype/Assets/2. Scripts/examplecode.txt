@@ -1,0 +1,14 @@
+Touch touch = Input.GetTouch(0);
+
+if (Input.touchCount > 0 && touch.phase == TouchPhase.Began)
+{
+    TrackableHit hit;
+    TrackableHitFlags flags = TrackableHitFlags.PlaneWithinPolygon | TrackableHitFlags.FeaturePointWithSurfaceNormal;
+
+    //ARCore Raycast
+    if (Frame.Raycast(touch.position.x, touch.position.y, flags, out hit))
+    {
+        var anchor = hit.Trackable.CreateAnchor(hit.Pose);
+        Instantiate(loaded, hit.Pose.position, hit.Pose.rotation, anchor.transform);
+    }
+}

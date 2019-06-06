@@ -6,28 +6,31 @@
     <title>집사랑 :: 내 손 안에서 만나는 길 위의 친구들</title>
     <meta charset="utf-8">
     <link href="style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+KR|Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700,500&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <nav>
-        <img id="logo" src="logo.png">
+        <div id="logo-nav">
+            <img id="logo" src="logo.png">
+            <div id="logo-text"> 2019 Spring User-Centered Design</div>
+        </div>
 
         <div class="nav-container">
             <div class="nav-item">
-                ABOUT
+                About
             </div>
             <div class="nav-item">
-                TEAM
+                Team
             </div>
             <div class="nav-item">
-                PROJECTS
+                Process
             </div>
             <div class="nav-item">
-                VIDEO
+                Video
             </div>
             <div class="nav-item">
-                PROTOTYPE
+                Prototype
             </div>
         </div>
     </nav>
@@ -36,7 +39,7 @@
         main screen: text, images, screenshots etc
     </div>
 
-    <div id="about-us">
+    <div id="about-us" class="container">
         <div class="title">People</div>
         <div class="person">
             <!--img class="photo"-->
@@ -83,18 +86,63 @@
         </div>
     </div>
 
-    <div id="project-list">
-        <div class="title">Projects</div>
+    <div id="project-list" class="container">
+        <div class="title">Design Process</div>
+        <div class="project">
+            <div class="project-img"></div>
+            <div class="project-line">
+                <div class="project-num">1</div>
+                <div class="project-name">User Research and Personas</div>
+            </div>
+            <div class="project-description">
+                Presentation: <a href="">PDF</a> </br>
+                Report : <a href="">PDF</a>
+            </div>
+        </div>
+        <div class="project">
+            <div class="project-img"></div>
+            <div class="project-line">
+                <div class="project-num">2</div>
+                <div class="project-name">Ideation and Sketching</div>
+            </div>
+            <div class="project-description">
+                Presentation: <a href="">PDF</a> </br>
+                Report : <a href="">PDF</a>
+            </div>
+        </div>
+        <div class="project">
+            <div class="project-img"></div>
+            <div class="project-line">
+                <div class="project-num">3</div>
+                <div class="project-name">Prototype and Heuristic Evaluation</div>
+            </div>
+            <div class="project-description">
+                Presentation: <a href="">PDF</a> </br>
+                Report : <a href="">PDF</a>
+            </div>
+        </div>
+        <div class="project">
+            <div class="project-img"></div>
+            <div class="project-line">
+                <div class="project-num">4</div>
+                <div class="project-name">Video Prototype</div>
+            </div>
+            <div class="project-description">
+                Presentation: <a href="">PDF</a> </br>
+                Report : <a href="">PDF</a>
+            </div>
+        </div>
     </div>
 
-    <div id="concept-video">
+    <div id="concept-video" class="container">
         <div class="title">Concept Video</div>
     </div>
 
-    <div id="prototype">
+    <div id="prototype" class="container">
         <div class="title">Prototype</div>
     </div>
 
 </body>
 <script src="interaction.js"></script>
+
 </html>

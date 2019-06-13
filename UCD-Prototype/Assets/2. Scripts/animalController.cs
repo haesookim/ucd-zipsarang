@@ -29,15 +29,6 @@ public class animalController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /* ontouch{
-            if (nuggimpyo){
-                raiseAffect();
-            }
-            else{
-                viewDetail();
-            }
-        }*/
-
         timer += Time.deltaTime;
         timeInSecs = (int)(timer % 60);
         if (timeInSecs == 0) {
@@ -46,7 +37,6 @@ public class animalController : MonoBehaviour
         if (timeInSecs - currTime >= interval){
             currTime = timeInSecs;
             rand = (int)Random.Range(0,4);
-            Debug.Log(rand);
         }
         randomMovement(rand);
         if (timeInSecs == 50) {
@@ -66,15 +56,6 @@ public class animalController : MonoBehaviour
     }
 
     void OnMouseDown() {
-        Debug.Log("Meow");
-        if (nuggimpyo == true) {
-            raiseAffect();
-        }
-        else {
-            Debug.Log("Detail info");
-        }
-        Debug.Log(affection);
-
         //camera switching script
         Main.enabled = false;
         Focus.enabled = true;

@@ -76,8 +76,9 @@ nav{
 }
 
 .photo{
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
     border-radius: 100%;
     background-color: gray;
     line-height: 150px;

@@ -10,8 +10,9 @@ public class animalController : MonoBehaviour
     public int affection = 0;
 
     public GameObject interactionBalloon;
+    public GameObject interactionHeart;
 
-    public int interval = 5;
+    public int interval = 10;
     private int currTime = 0;
     private float timer;
     private int timeInSecs;
@@ -49,7 +50,7 @@ public class animalController : MonoBehaviour
             positionVal = gameObject.GetComponent<SpriteRenderer>().transform.position;
             positionVal.y = originYpos;
             gameObject.GetComponent<SpriteRenderer>().transform.position = positionVal;
-            interval = 5;
+            interval = 10;
         }
         randomMovement(rand);
 
@@ -93,7 +94,6 @@ public class animalController : MonoBehaviour
                 anim.SetBool("down", false);
                 anim.SetBool("search", false);
                 anim.SetBool("watching", false);
-                interval = 5;
                 break;
 
             case 1:
@@ -104,7 +104,6 @@ public class animalController : MonoBehaviour
                 anim.SetBool("down", false);
                 anim.SetBool("search", false);
                 anim.SetBool("watching", false);
-                interval = 5;
                 break;
 
             case 2:
@@ -115,7 +114,6 @@ public class animalController : MonoBehaviour
                 anim.SetBool("down", false);
                 anim.SetBool("search", false);
                 anim.SetBool("watching", false);
-                interval = 4;
                 break;
             
             case 3:
@@ -161,6 +159,7 @@ public class animalController : MonoBehaviour
                 positionVal = gameObject.GetComponent<SpriteRenderer>().transform.position;
                 positionVal.y = originYpos-0.2f;
                 gameObject.GetComponent<SpriteRenderer>().transform.position = positionVal;
+                interval = 4;
                 break;
         }
     }
@@ -182,8 +181,11 @@ public class animalController : MonoBehaviour
     }
 
     public void raiseAffect(){
+        float randx = Random.Range(-0.2f, 0.2f);
+        Vector3 pos = new Vector3(randx, 2, 0);
         affection++; // 1~6 scale if affection < max
         nuggimpyo = false;
+        Instantiate(interactionHeart, gameObject.transform.position + pos, Quaternion.identity);
     }
 
     void viewDetail() {

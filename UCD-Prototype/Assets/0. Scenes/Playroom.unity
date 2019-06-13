@@ -2058,7 +2058,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 7ada5c4b55ca343a5bc8225dbaafd848, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2162,7 +2162,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 7cece3bddd62c45a486c6de6127ae2f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2308,6 +2308,8 @@ MonoBehaviour:
   nuggimpyo: 0
   affection: 0
   interactionBalloon: {fileID: 1716699655}
+  interactionHeart: {fileID: 1773648900630208957, guid: cf045b3c447d74ae6b65313355be579f,
+    type: 3}
   interval: 5
   Main: {fileID: 547193366}
   Focus: {fileID: 1050787625}

@@ -6,137 +6,145 @@
     <title>집사랑 :: 내 손 안에서 만나는 길 위의 친구들</title>
     <meta charset="utf-8">
     <link href="style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700,500&display=swap" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700,500,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <nav>
         <div id="logo-nav">
             <img id="logo" src="logo.png">
-            <div id="logo-text"> 2019 Spring User-Centered Design</div>
+            <div id="logo-text"> 2019-1학기 사용자중심디자인</div>
         </div>
 
         <div class="nav-container">
-            <div class="nav-item">
-                About
-            </div>
-            <div class="nav-item">
-                Team
-            </div>
-            <div class="nav-item">
-                Process
-            </div>
-            <div class="nav-item">
-                Video
-            </div>
-            <div class="nav-item">
-                Prototype
-            </div>
+            <a data-scroll href="#intro" class="nav-item" onclick="">
+                메인 화면
+            </a>
+            <a data-scroll href="#about-us" class="nav-item">
+                팀 소개
+            </a>
+            <a data-scroll href="#project-list" class="nav-item">
+                디자인 과정
+            </a>
+            <a data-scroll href="#concept-video" class="nav-item">
+                컨셉 비디오
+            </a>
+            <a data-scroll href="#prototype" class="nav-item">
+                프로토타입
+            </a>
         </div>
     </nav>
 
     <div id="intro">
-        main screen: text, images, screenshots etc
     </div>
 
     <div id="about-us" class="container">
-        <div class="title">People</div>
-        <div class="person">
-            <!--img class="photo"-->
-            <div class="photo">placeholder</div>
-            <div class="person-name">
-                Kim Haesoo
-            </div>
-            <div class="person-intro">
-                brief intro
-            </div>
-        </div>
+        <div class="title">팀 소개</div>
+        <div class="subtitle">"수고하셨습니다"</div>
+        <div class="team-desc">여기에 무언가 설명이 들어가겠죠 우리는 왜 이 프로젝트를 하고 있을까요 우리는 어떻게 모였을까요 오호홓... 썸띵굿... 이런저런 이야기... 사용자중심디자인 수업에서 모여서.... 머시기.... 고양이 조아... 댕댕이 조아....</div>
 
-        <div class="person">
-            <img class="photo" src="minchang.jpeg">
-            <div class="person-name">
-                Seok Minchang
+        <div class="subtitle">팀원 소개</div>
+        <div class="flex-container">
+            <div class="person">
+                <!--img class="photo"-->
+                <img class="photo" src="haesoo.jpeg">
+                <div class="person-name">
+                    김해수
+                </div>
+                <div class="person-intro">
+                    개발
+                </div>
             </div>
-            <div class="person-intro">
-                brief intro
-            </div>
-        </div>
 
-        <div class="person">
-            <img class="photo" src="hyein.jpeg">
-            <div class="person-name">
-                Kim Hyein
+            <div class="person">
+                <img class="photo" src="minchang.jpeg">
+                <div class="person-name">
+                    석민창
+                </div>
+                <div class="person-intro">
+                    기획
+                </div>
             </div>
-            <div class="person-intro">
-                brief intro
-            </div>
-        </div>
 
-        <div class="person">
-            <img class="photo" src="hyejung.jpeg">
-            <div class="person-name">
-                Park Hyejung
+            <div class="person">
+                <img class="photo" src="hyein.jpeg">
+                <div class="person-name">
+                    김혜인
+                </div>
+                <div class="person-intro">
+                    디자인
+                </div>
             </div>
-            <div class="person-intro">
-                brief intro
+
+            <div class="person">
+                <img class="photo" src="hyejung.jpeg">
+                <div class="person-name">
+                    박혜정
+                </div>
+                <div class="person-intro">
+                    개발
+                </div>
             </div>
         </div>
     </div>
 
     <div id="project-list" class="container">
-        <div class="title">Design Process</div>
-        <div class="project">
-            <div class="project-img"></div>
-            <div class="project-line">
+        <div class="title">디자인 과정</div>
+        <div class="flex-container">
+            <div class="project">
                 <div class="project-num">1</div>
-                <div class="project-name">User Research and Personas</div>
+                <div class="project-img"><img src="research.png"></div>
+                <div class="project-line">
+                    <div class="project-name">User Research & Personas</div>
+                </div>
+                <div class="project-description">
+                    발표 자료: <a href="">PDF</a> </br>
+                    레포트: <a href="">PDF</a>
+                </div>
             </div>
-            <div class="project-description">
-                Presentation: <a href="">PDF</a> </br>
-                Report : <a href="">PDF</a>
-            </div>
-        </div>
-        <div class="project">
-            <div class="project-img"></div>
-            <div class="project-line">
+            <div class="project">
                 <div class="project-num">2</div>
-                <div class="project-name">Ideation and Sketching</div>
+                <div class="project-img"><img src="ideation.png"></div>
+                <div class="project-line">
+                    <div class="project-name">Ideation and Sketching</div>
+                </div>
+                <div class="project-description">
+                    발표 자료: <a href="">PDF</a> </br>
+                    레포트: <a href="">PDF</a>
+                </div>
             </div>
-            <div class="project-description">
-                Presentation: <a href="">PDF</a> </br>
-                Report : <a href="">PDF</a>
-            </div>
-        </div>
-        <div class="project">
-            <div class="project-img"></div>
-            <div class="project-line">
+            <div class="project">
                 <div class="project-num">3</div>
-                <div class="project-name">Prototype and Heuristic Evaluation</div>
+                <div class="project-img"><img src="evaluation.png"></div>
+                <div class="project-line">
+                    <div class="project-name">Prototype & Heuristic Evaluation</div>
+                </div>
+                <div class="project-description">
+                    발표 자료: <a href="">PDF</a> </br>
+                    레포트: <a href="">PDF</a>
+                </div>
             </div>
-            <div class="project-description">
-                Presentation: <a href="">PDF</a> </br>
-                Report : <a href="">PDF</a>
-            </div>
-        </div>
-        <div class="project">
-            <div class="project-img"></div>
-            <div class="project-line">
+            <div class="project">
                 <div class="project-num">4</div>
-                <div class="project-name">Video Prototype</div>
-            </div>
-            <div class="project-description">
-                Presentation: <a href="">PDF</a> </br>
-                Report : <a href="">PDF</a>
+                <div class="project-img"><img src="video.png"></div>
+                <div class="project-line">
+                    <div class="project-name">Video Prototype</div>
+                </div>
+                <div class="project-description">
+                    발표 자료: <a href="">PDF</a> </br>
+                    레포트: <a href="">PDF</a>
+                </div>
             </div>
         </div>
     </div>
 
     <div id="concept-video" class="container">
-        <div class="title">Concept Video</div>
+        <div class="title">컨셉 비디오</div>
     </div>
 
     <div id="prototype" class="container">
-        <div class="title">Prototype</div>
+        <div class="title">프로토타입</div>
     </div>
 
 </body>

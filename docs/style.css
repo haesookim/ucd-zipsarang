@@ -3,6 +3,7 @@ html, body{
     margin : 0;
     padding: 0;
     font-family: 'Noto Sans KR';
+    scroll-behavior: smooth;
 }
 
 #logo{
@@ -40,33 +41,58 @@ nav{
 
 .nav-item{
     padding: 25px 15px;
+    text-decoration: none;
+    color: black;
 }
 
 #intro{
-    padding-top: 69px;
-    height: 100%;
+    padding-top: 80px;
+    height: 90%;
     background-color: aliceblue;
+    background-image: url("main_image.png");
+    background-size: cover;
+    background-position: center;
 }
 
 .container{
+    padding: 80px 0px;
+}
+
+.flex-container{
     display:flex;
     flex-wrap:wrap;
     justify-content: space-evenly;
     align-items: center;
-    margin: 50px 0px;
 }
 
 #project-list, #prototype{
-    padding: 50px 0px;
-    background-color: aliceblue;
+    padding: 80px 0px;
+    background-color: #feda08;
 }
 
 .title{
     width: 100%;
     text-align: center;
-    font-size: 24px;
-    margin: 10px 0 25px;
+    font-size: 30px;
+    margin: 10px 0 40px;
     font-weight: 700;
+}
+
+.subtitle{
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 25px;;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #feda08;
+    font-weight: 300;
+}
+
+.team-desc{
+    width: 60%;
+    margin: 10px auto 40px;
+    text-align: center;
+    font-size: 17px;
 }
 
 .person{
@@ -80,38 +106,63 @@ nav{
     width: 200px;
     object-fit: cover;
     border-radius: 100%;
-    background-color: gray;
+    border: 2px #feda08 solid;
     line-height: 150px;
-    margin: 10px 25px;
+    margin: 10px 0;
 }
 
 .person-name, .project-name{
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 23px;
+}
+
+.person-name{
+    background-color: #feda08;
+    margin: 0px auto 10px;
+    padding: 0px 5px;
+    color:white;
 }
 
 .project{
-    width:300px;
+    width:280px;
     margin: 30px;
+    margin-top: 0px;
 }
 
 .project-description{
     text-align: center;
 }
 
+.project-img{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    display:flex;
+}
+
+.project-img img{
+    width: inherit;
+    height: auto;
+    align-items: center;
+}
+
 .project-line{
     display:flex;
-    justify-content: center;
+    vertical-align: center;
 }
 
 .project-num{
-    font-weight: 700;
-    font-size: 25px;
-    color: blue;
-    margin-right: 15px;
+    width: fit-content;
+    font-weight: 900;
+    font-size: 80px;
+    color: white;
+    margin: 0 auto;
 }
 
 .project-name{
-    margin-top: 2.5px;
+    height: 60px;
+    margin: 0 auto;
     font-size: 20px;
     text-align: center;
+    width: 227px;
 }

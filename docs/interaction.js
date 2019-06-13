@@ -6,9 +6,10 @@ jQuery(document).ready(function($) {
     function scrollToSection(event) {
       event.preventDefault();
       var $section = $($(this).attr('href')); 
+      var position = $section.offset().top - 80;
       $('html, body').animate({
-        scrollTop: $section.offset().top
-      }, 500);
+        scrollTop: position
+      }, 300);
     }
     $('[data-scroll]').on('click', scrollToSection);
   }(jQuery));

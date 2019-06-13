@@ -9,6 +9,8 @@ public class animalController : MonoBehaviour
     public bool nuggimpyo = false;
     public int affection = 0;
 
+    public GameObject interactionBalloon;
+
     public int interval = 5;
     private int currTime = 0;
     private float timer;
@@ -20,10 +22,17 @@ public class animalController : MonoBehaviour
     public Canvas MainUI;
     public Canvas FocusUI;
 
+    private Animator anim;
+
+    private float originYpos;
+    private Vector3 positionVal;
+
     // Start is called before the first frame update
     void Start()
     {
         BoxCollider2D col = GetComponent<BoxCollider2D>();
+        anim = gameObject.GetComponent<Animator>();
+        originYpos = gameObject.GetComponent<SpriteRenderer>().transform.position.y;
     }
 
     // Update is called once per frame
@@ -36,11 +45,22 @@ public class animalController : MonoBehaviour
         }
         if (timeInSecs - currTime >= interval){
             currTime = timeInSecs;
-            rand = (int)Random.Range(0,4);
+            rand = (int)Random.Range(0,7);
+            positionVal = gameObject.GetComponent<SpriteRenderer>().transform.position;
+            positionVal.y = originYpos;
+            gameObject.GetComponent<SpriteRenderer>().transform.position = positionVal;
+            interval = 5;
         }
         randomMovement(rand);
-        if (timeInSecs == 50) {
+
+        if (timeInSecs == 10) {
             nuggimpyo = true;
+        }
+
+        if (nuggimpyo){
+            interactionBalloon.GetComponent<SpriteRenderer>().enabled = true;
+        } else{
+            interactionBalloon.GetComponent<SpriteRenderer>().enabled = false;
         }
 
         /*if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended) {
@@ -67,30 +87,80 @@ public class animalController : MonoBehaviour
         switch (rand){
             case 0 : 
                 move(0);
-                gameObject.GetComponent<Animator>().SetBool("stretching", false);
-                gameObject.GetComponent<Animator>().SetBool("sitting", false);
-                gameObject.GetComponent<Animator>().SetBool("moving", true);
+                anim.SetBool("stretching", false);
+                anim.SetBool("sitting", false);
+                anim.SetBool("moving", true);
+                anim.SetBool("down", false);
+                anim.SetBool("search", false);
+                anim.SetBool("watching", false);
+                interval = 5;
                 break;
 
             case 1:
                 move(1);
-                gameObject.GetComponent<Animator>().SetBool("stretching", false);
-                gameObject.GetComponent<Animator>().SetBool("sitting", false);
-                gameObject.GetComponent<Animator>().SetBool("moving", true);
+                anim.SetBool("stretching", false);
+                anim.SetBool("sitting", false);
+                anim.SetBool("moving", true);
+                anim.SetBool("down", false);
+                anim.SetBool("search", false);
+                anim.SetBool("watching", false);
+                interval = 5;
                 break;
 
             case 2:
                 //앉아있기
-                gameObject.GetComponent<Animator>().SetBool("moving", false);
-                gameObject.GetComponent<Animator>().SetBool("stretching", false);
-                gameObject.GetComponent<Animator>().SetBool("sitting", true);
+                anim.SetBool("moving", false);
+                anim.SetBool("stretching", false);
+                anim.SetBool("sitting", true);
+                anim.SetBool("down", false);
+                anim.SetBool("search", false);
+                anim.SetBool("watching", false);
+                interval = 4;
                 break;
             
             case 3:
                 //기지개
-                gameObject.GetComponent<Animator>().SetBool("moving", false);
-                gameObject.GetComponent<Animator>().SetBool("sitting", false);
-                gameObject.GetComponent<Animator>().SetBool("stretching", true);
+                anim.SetBool("moving", false);
+                anim.SetBool("sitting", false);
+                anim.SetBool("stretching", true);
+                anim.SetBool("down", false);
+                anim.SetBool("search", false);
+                anim.SetBool("watching", false);
+                interval = 2;
+                break;
+            case 4:
+                //누워있기
+                anim.SetBool("moving", false);
+                anim.SetBool("sitting", false);
+                anim.SetBool("stretching", false);
+                anim.SetBool("down", true);
+                anim.SetBool("search", false);
+                anim.SetBool("watching", false);
+                positionVal = gameObject.GetComponent<SpriteRenderer>().transform.position;
+                positionVal.y = originYpos-0.3f;
+                gameObject.GetComponent<SpriteRenderer>().transform.position = positionVal;     
+                break;
+            case 5:
+                //구경하기
+                anim.SetBool("moving", false);
+                anim.SetBool("sitting", false);
+                anim.SetBool("stretching", false);
+                anim.SetBool("down", false);
+                anim.SetBool("search", false);
+                anim.SetBool("watching", true);
+                interval = 3;
+                break;
+            case 6:
+                //뒤적뒤적
+                anim.SetBool("moving", false);
+                anim.SetBool("sitting", false);
+                anim.SetBool("stretching", false);
+                anim.SetBool("down", false);
+                anim.SetBool("search", true);
+                anim.SetBool("watching", false);
+                positionVal = gameObject.GetComponent<SpriteRenderer>().transform.position;
+                positionVal.y = originYpos-0.2f;
+                gameObject.GetComponent<SpriteRenderer>().transform.position = positionVal;
                 break;
         }
     }
@@ -111,8 +181,9 @@ public class animalController : MonoBehaviour
         }
     }
 
-    void raiseAffect(){
+    public void raiseAffect(){
         affection++; // 1~6 scale if affection < max
+        nuggimpyo = false;
     }
 
     void viewDetail() {

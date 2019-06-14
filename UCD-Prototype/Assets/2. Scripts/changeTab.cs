@@ -8,9 +8,11 @@ public class changeTab : MonoBehaviour
     public Sprite tab1;
     public Sprite tab2;
     public Sprite tab3;
+    public Sprite tab4;
     public Canvas canvas1;
     public Canvas canvas2;
     public Canvas canvas3;
+    public Canvas canvas4;
 
 
     public void showTab1(){
@@ -18,6 +20,7 @@ public class changeTab : MonoBehaviour
         canvas1.enabled = true;
         canvas2.enabled = false;
         canvas3.enabled = false;
+        canvas4.enabled = false;
     }
 
     public void showTab2(){
@@ -25,6 +28,7 @@ public class changeTab : MonoBehaviour
         canvas1.enabled = false;
         canvas2.enabled = true;
         canvas3.enabled = false;
+        canvas4.enabled = false;
     }
 
     public void showTab3(){
@@ -32,5 +36,14 @@ public class changeTab : MonoBehaviour
         canvas1.enabled = false;
         canvas2.enabled = false;
         canvas3.enabled = true;
+        canvas4.enabled = false;
+    }
+
+    public void showTab4(){
+        this.GetComponent<SpriteRenderer>().sprite = tab4;
+        canvas1.enabled = false;
+        canvas2.enabled = false;
+        canvas3.enabled = false;
+        canvas4.enabled = true;
     }
 }

@@ -135,7 +135,7 @@ public class animalController : MonoBehaviour
                 anim.SetBool("search", false);
                 anim.SetBool("watching", false);
                 positionVal = gameObject.GetComponent<SpriteRenderer>().transform.position;
-                positionVal.y = originYpos-0.3f;
+                positionVal.y = originYpos-0.4f;
                 gameObject.GetComponent<SpriteRenderer>().transform.position = positionVal;     
                 break;
             case 5:

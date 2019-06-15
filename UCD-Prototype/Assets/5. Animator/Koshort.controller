@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cat
+  m_Name: Koshort
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: moving
@@ -1027,7 +1027,7 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 120, y: -468, z: 0}
-  m_EntryPosition: {x: 84, y: 324, z: 0}
+  m_EntryPosition: {x: -36, y: 492, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1102008291535577660}

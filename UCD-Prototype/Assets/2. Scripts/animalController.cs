@@ -167,13 +167,13 @@ public class animalController : MonoBehaviour
     void move(int dir){
         if (dir == 0){ // move left
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
-            if (gameObject.transform.position.x < -7.5 ) {
+            if (gameObject.transform.position.x < -16 ) {
                 rand = 1;
             }
             transform.Translate(-speed * Time.deltaTime);
         } else if (dir ==1){ // move right
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
-            if (gameObject.transform.position.x > 7.5) {
+            if (gameObject.transform.position.x > 16) {
                 rand = 0;
             }
             transform.Translate(speed * Time.deltaTime);    

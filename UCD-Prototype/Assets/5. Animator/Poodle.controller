@@ -14,37 +14,37 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: sitting
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: search
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: down
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: moving
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: watching
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -1017,7 +1017,7 @@ AnimatorStateMachine:
     m_Position: {x: 271.87897, y: 389.64648, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102268771828629778}
-    m_Position: {x: 679.87897, y: -162.35352, z: 0}
+    m_Position: {x: 684, y: -168, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102018881262096164}
     m_Position: {x: 391.87897, y: -6.3535156, z: 0}
@@ -1030,4 +1030,4 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 36, y: 600, z: 0}
   m_ExitPosition: {x: 48, y: 444, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 1102942111900129304}
+  m_DefaultState: {fileID: 1102268771828629778}

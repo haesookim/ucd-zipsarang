@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     public buyableItem[] inventory = new buyableItem[14];
-    public int money;
+    public int money = 300;
     public Text moneytext;
 
     void Awake()

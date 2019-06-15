@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class animalController : MonoBehaviour
 {
-    public Vector3 speed = new Vector3(300f,0,0);
+    public Vector3 speed = new Vector3(300f, 0, 0);
     public bool nuggimpyo = false;
     public int affection = 0;
 
@@ -41,12 +41,14 @@ public class animalController : MonoBehaviour
     {
         timer += Time.deltaTime;
         timeInSecs = (int)(timer % 60);
-        if (timeInSecs == 0) {
+        if (timeInSecs == 0)
+        {
             currTime = 0;
         }
-        if (timeInSecs - currTime >= interval){
+        if (timeInSecs - currTime >= interval)
+        {
             currTime = timeInSecs;
-            rand = (int)Random.Range(0,7);
+            rand = (int)Random.Range(0, 7);
             positionVal = gameObject.GetComponent<SpriteRenderer>().transform.position;
             positionVal.y = originYpos;
             gameObject.GetComponent<SpriteRenderer>().transform.position = positionVal;
@@ -54,13 +56,17 @@ public class animalController : MonoBehaviour
         }
         randomMovement(rand);
 
-        if (timeInSecs == 10) {
+        if (timeInSecs == 10)
+        {
             nuggimpyo = true;
         }
 
-        if (nuggimpyo){
+        if (nuggimpyo)
+        {
             interactionBalloon.GetComponent<SpriteRenderer>().enabled = true;
-        } else{
+        }
+        else
+        {
             interactionBalloon.GetComponent<SpriteRenderer>().enabled = false;
         }
 
@@ -73,20 +79,26 @@ public class animalController : MonoBehaviour
                 
             }
         }*/
-        
+
     }
 
-    void OnMouseDown() {
+    void OnMouseDown()
+    {
         //camera switching script
-        Main.enabled = false;
-        Focus.enabled = true;
-        MainUI.enabled = false;
-        FocusUI.enabled = true;
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            Main.enabled = false;
+            Focus.enabled = true;
+            MainUI.enabled = false;
+            FocusUI.enabled = true;
+        }
     }
 
-    void randomMovement(int rand){
-        switch (rand){
-            case 0 : 
+    void randomMovement(int rand)
+    {
+        switch (rand)
+        {
+            case 0:
                 move(0);
                 anim.SetBool("stretching", false);
                 anim.SetBool("sitting", false);
@@ -115,7 +127,7 @@ public class animalController : MonoBehaviour
                 anim.SetBool("search", false);
                 anim.SetBool("watching", false);
                 break;
-            
+
             case 3:
                 //기지개
                 anim.SetBool("moving", false);
@@ -135,8 +147,8 @@ public class animalController : MonoBehaviour
                 anim.SetBool("search", false);
                 anim.SetBool("watching", false);
                 positionVal = gameObject.GetComponent<SpriteRenderer>().transform.position;
-                positionVal.y = originYpos-0.4f;
-                gameObject.GetComponent<SpriteRenderer>().transform.position = positionVal;     
+                positionVal.y = originYpos - 0.4f;
+                gameObject.GetComponent<SpriteRenderer>().transform.position = positionVal;
                 break;
             case 5:
                 //구경하기
@@ -157,30 +169,37 @@ public class animalController : MonoBehaviour
                 anim.SetBool("search", true);
                 anim.SetBool("watching", false);
                 positionVal = gameObject.GetComponent<SpriteRenderer>().transform.position;
-                positionVal.y = originYpos-0.2f;
+                positionVal.y = originYpos - 0.2f;
                 gameObject.GetComponent<SpriteRenderer>().transform.position = positionVal;
                 interval = 4;
                 break;
         }
     }
 
-    void move(int dir){
-        if (dir == 0){ // move left
+    void move(int dir)
+    {
+        if (dir == 0)
+        { // move left
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
-            if (gameObject.transform.position.x < -16 ) {
+            if (gameObject.transform.position.x < -16)
+            {
                 rand = 1;
             }
             transform.Translate(-speed * Time.deltaTime);
-        } else if (dir ==1){ // move right
+        }
+        else if (dir == 1)
+        { // move right
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
-            if (gameObject.transform.position.x > 16) {
+            if (gameObject.transform.position.x > 16)
+            {
                 rand = 0;
             }
-            transform.Translate(speed * Time.deltaTime);    
+            transform.Translate(speed * Time.deltaTime);
         }
     }
 
-    public void raiseAffect(){
+    public void raiseAffect()
+    {
         float randx = Random.Range(-0.2f, 0.2f);
         Vector3 pos = new Vector3(randx, 2, 0);
         affection++; // 1~6 scale if affection < max
@@ -188,7 +207,8 @@ public class animalController : MonoBehaviour
         Instantiate(interactionHeart, gameObject.transform.position + pos, Quaternion.identity);
     }
 
-    void viewDetail() {
+    void viewDetail()
+    {
         Debug.Log("view Detail");
         nuggimpyo = false;
     }

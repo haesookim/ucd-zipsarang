@@ -6,11 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/0. Scenes/InitSceneControls.unity
+    guid: bc6724085de9a42ff8fea6e8dd765514
+  - enabled: 1
     path: Assets/0. Scenes/TitleScreen.unity
     guid: 3dee63fe8d4c04ba7a7cb307532cc093
   - enabled: 1
+    path: Assets/0. Scenes/Gone.unity
+    guid: 438731fc8f9984f52831d46e64e2333b
+  - enabled: 0
     path: Assets/0. Scenes/Discover.unity
     guid: 7627be949cfc14215a5fcb5a3cfff98b
+  - enabled: 1
+    path: Assets/0. Scenes/FoundPoodle.unity
+    guid: eef5f42a098e647818584fe22b0fb4b4
   - enabled: 1
     path: Assets/0. Scenes/Found.unity
     guid: bc520f441ddbd453c86dfd719b943c12
@@ -21,15 +30,12 @@ EditorBuildSettings:
     path: Assets/0. Scenes/Gallery.unity
     guid: 4f5e48c0ec0d4478bbeb0bb9c2a78abb
   - enabled: 1
+    path: Assets/0. Scenes/DetailsPoodle.unity
+    guid: b6af1a7dcefc04405b00e431bfed5199
+  - enabled: 1
     path: Assets/0. Scenes/Details.unity
     guid: f29fbd8c253d44da28ddd9df4c6764d1
   - enabled: 1
     path: Assets/0. Scenes/Shop.unity
     guid: 2d48df31ec561472a91117b749082b22
-  - enabled: 1
-    path: Assets/0. Scenes/Emergency.unity
-    guid: 43292e21ee6e94baf9829b2ba925f16c
-  - enabled: 1
-    path: Assets/0. Scenes/Setting.unity
-    guid: 8839941b801554012b82b90e793a0d09
   m_configObjects: {}

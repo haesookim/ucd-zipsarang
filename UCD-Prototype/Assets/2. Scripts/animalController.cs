@@ -181,7 +181,7 @@ public class animalController : MonoBehaviour
         if (dir == 0)
         { // move left
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
-            if (gameObject.transform.position.x < -16)
+            if (gameObject.transform.position.x < -15)
             {
                 rand = 1;
             }
@@ -190,7 +190,7 @@ public class animalController : MonoBehaviour
         else if (dir == 1)
         { // move right
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
-            if (gameObject.transform.position.x > 16)
+            if (gameObject.transform.position.x > 15)
             {
                 rand = 0;
             }

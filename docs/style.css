@@ -62,7 +62,7 @@ nav{
 .flex-container{
     display:flex;
     flex-wrap:wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -171,4 +171,8 @@ nav{
 video{
     margin: 0 auto;
     padding: 0 auto;
+}
+
+iframe{
+    margin: 0 auto;
 }

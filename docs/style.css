@@ -176,3 +176,7 @@ video{
 iframe{
     margin: 0 auto;
 }
+
+#innercontainer{
+    text-align: center;
+}
